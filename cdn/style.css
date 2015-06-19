@@ -1,7 +1,9 @@
-.asd{
-    background-color: 'red';
+#asd{
+    background-color: #FA0;
+    color: green;
 }
 
 .zxc{
-    background-color: 'green';
+    background-color: green;
+    color: #FA0;
 }
