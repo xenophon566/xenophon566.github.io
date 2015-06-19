@@ -1,6 +1,6 @@
 <?php
 class Core {
-    public static function prt() {
+    public static function prt($_STR, $mode=0) {
         $m = sprintf("%04d", decbin(abs($mode)%15));
         if($m[1]) $_STR = is_array($_STR) ? $_STR : (array)($_STR);
         if($m[1]) foreach($_STR as $key=>$value) $_STR[$key] = strip_tags($value);
@@ -25,7 +25,7 @@ class Core {
     }
 }
 
-function prt() {
+function prt($_STR, $mode=0) {
     $m = sprintf("%04d", decbin(abs($mode)%15));
     if($m[1]) $_STR = is_array($_STR) ? $_STR : (array)($_STR);
     if($m[1]) foreach($_STR as $key=>$value) $_STR[$key] = strip_tags($value);
