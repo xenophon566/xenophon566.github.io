@@ -175,7 +175,7 @@ var imageUtility = (function(){
         }
 
         html5.setParas({'counter': uploadCounter});
-        html5.ajaxTxing(imgObj, file);
+        // html5.ajaxTxing(imgObj, file);
 
         photoSizeArr.shift(); if(!pCnt) photoSizeArr = [];
         image = file = thumbnail = imgSize = imgExif = imgObj = null;
