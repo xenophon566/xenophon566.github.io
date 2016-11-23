@@ -5,7 +5,7 @@
 <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="js/jquery.dOb.js"></script>
 </head>
-<body style="background-color:#DDD;">
+<body style="background-color:#f6f6f6;">
 <style>
 p a {
 	text-decoration: none;
@@ -20,9 +20,9 @@ p a {
 <script>
 $(function(){
 	$("#myBirthDate").dOb({
-		from_Y: 1911,
-		to_Y: 2013,
-		digi: true
+		from_Y: 1970,
+		to_Y: 2014,
+		isPadding: true
 	});
 });
 function myBirthDate() {
@@ -44,7 +44,6 @@ function myBirthDate() {
 <section id="start">	<!--section start-->
 	<h1>Getting Started</h1>
 	<p>
-		dOb.js is a dropdown menu to choosing your date of birthday. It getting start as following : <br>
 		<div class="textbox">
 			<pre>
 			$("#myBirthDate").dOb({
@@ -64,7 +63,6 @@ function myBirthDate() {
 <section id="document">	<!--section document-->
 	<h1>Document</h1>
 	<p>
-		HTML as following : <br>
 		<div class="textbox">
 			<xmp><div id="myBirthDate"></xmp>
 			<xmp><select id="dOb_Y"><option value="2013">2013</option></select></xmp>
