@@ -1,51 +1,51 @@
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>My dOb</title>
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="js/jquery.dOb.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>My dOb</title>
+    <link rel="stylesheet" href="../jquery.dOb/css/style.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../jquery.dOb/js/jquery.dOb.js"></script>
+    <script>
+    $(function() {
+        $("#myBirthDate").dOb({
+            from_Y: 1970,
+            to_Y: 2014,
+            isPadding: true
+        });
+    });
+
+    function myBirthDate() {
+        alert($("#dOb_Y").val() + '/' + $("#dOb_M").val() + '/' + $("#dOb_D").val());
+    }
+    </script>
 </head>
-<body style="background-color:#f6f6f6;">
-<style>
-p a {
-	text-decoration: none;
-	color: rgb(155, 93, 52);
-}
-.textbox {
-	background-color: white;
-	border: 1px solid;
-	width: 50%;
-}
-</style>
-<script>
-$(function(){
-	$("#myBirthDate").dOb({
-		from_Y: 1970,
-		to_Y: 2014,
-		isPadding: true
-	});
-});
-function myBirthDate() {
-	alert( $("#dOb_Y").val() +'/'+ $("#dOb_M").val() +'/'+ $("#dOb_D").val() );
-}
-</script>
 
-<section id="demo">		<!--section demo-->
-	<h1>Demo</h1>
-	<div id="myBirthDate">
-		<select id="dOb_Y"><option value="1982">1982</option></select>
-		<select id="dOb_M"><option value="3">03</option></select>
-		<select id="dOb_D"><option value="23">23</option></select>
-	</div><br/>
-	<input type="button" value="dOb" onClick="myBirthDate();">
-</section>
-<hr>
-
-<section id="start">	<!--section start-->
-	<h1>Getting Started</h1>
-	<p>
-		<div class="textbox">
-			<pre>
+<body>
+    <!--section demo-->
+    <section id="demo">
+        <h1>Demo</h1>
+        <div id="myBirthDate">
+            <select id="dOb_Y">
+                <option value="1982">1982</option>
+            </select>
+            <select id="dOb_M">
+                <option value="3">03</option>
+            </select>
+            <select id="dOb_D">
+                <option value="23">23</option>
+            </select>
+        </div>
+        <br/>
+        <input type="button" value="dOb" onClick="myBirthDate();">
+    </section>
+    <hr>
+    <section id="start">
+        <!--section start-->
+        <h1>Getting Started</h1>
+        <p>
+            <div class="textbox">
+                <pre>
 			$("#myBirthDate").dOb({
 				<b>dOb_Y: '#dOb_Y' // element year</b>
 				<b>dOb_M: '#dOb_M' // element month</b>
@@ -55,24 +55,40 @@ function myBirthDate() {
 				<b>isPadding: true // padding zero(default: true)</b>
 			});
 			</pre>
-		</div>
-	</p>
-</section>
-<hr>
-
-<section id="document">	<!--section document-->
-	<h1>Document</h1>
-	<p>
-		<div class="textbox">
-			<xmp><div id="myBirthDate"></xmp>
-			<xmp><select id="dOb_Y"><option value="2013">2013</option></select></xmp>
-			<xmp><select id="dOb_M"><option value="3">03</option></select></xmp>
-			<xmp><select id="dOb_D"><option value="23">23</option></select></xmp>
-			<xmp></div></xmp>
-		</div>
-		<p><b>default values. ex."----" or "2013" or blank.</b></p>
-	</p>
-</section>
-
+            </div>
+        </p>
+    </section>
+    <hr>
+    <section id="document">
+        <!--section document-->
+        <h1>Document</h1>
+        <p>
+            <div class="textbox">
+                <xmp>
+                    <div id="myBirthDate">
+                </xmp>
+                <xmp>
+                    <select id="dOb_Y">
+                        <option value="2013">2013</option>
+                    </select>
+                </xmp>
+                <xmp>
+                    <select id="dOb_M">
+                        <option value="3">03</option>
+                    </select>
+                </xmp>
+                <xmp>
+                    <select id="dOb_D">
+                        <option value="23">23</option>
+                    </select>
+                </xmp>
+                <xmp>
+                    </div>
+                </xmp>
+            </div>
+            <p><b>default values. ex."----" or "2013" or blank.</b></p>
+        </p>
+    </section>
 </body>
+
 </html>
