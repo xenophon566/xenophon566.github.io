@@ -1,0 +1,26 @@
+body {
+	background-color:#DDD;
+}
+p a {
+	text-decoration: none;
+	color: rgb(155, 93, 52);
+}
+.textbox {
+	background-color: white;
+	border: 1px solid;
+	width: 50%;
+}
+
+/****Custom Message Class****/
+.correctClass {
+	border: 1px solid #21C021;
+}
+.errorClass {
+	border: 1px solid #E96767;
+}
+.corElemClass {
+	color: #21C021;
+}
+.errElemClass {
+	color: #E96767;
+}
