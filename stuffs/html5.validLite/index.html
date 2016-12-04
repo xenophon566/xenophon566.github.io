@@ -6,31 +6,31 @@
     <title>My ValidLite</title>
     <link rel="stylesheet" type="text/css" media="all" href="lib/animate.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/myStyle.css" />
-    <script type="text/javascript" src="lib/_jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/validLite.js"></script>
     <script>
     $(function() {
         $("#myform").validLite({
             pattern: {
-                number: /^\d+$/ //validate pattern (Default: myPattern)
+                number: /^\d+$/ // Default: myPattern
             },
             setting: {
-                getValid: '#myform', //get validate DOM (Default: body)
-                corMsgShow: true, //show an correct message (Default: false)
-                errMsgShow: true, //show an error message (Default: true)
-                corClassShow: true, //show an correct class (Default: false)
-                errClassShow: true, //show an error class (Default: true)
-                corClassName: 'correctClass', //correct class name (Default: correctClass)
-                errClassName: 'errorClass', //error class name (Default: errorClass)
-                corElem: 'span', //create an element of correct message (Default: span)
-                errElem: 'span', //create an element of error message (Default: span)
-                corElemClass: 'corElemClass', //class of correct element (Default: corElemClass)
-                errElemClass: 'errElemClass' //class of error element (Default: errElemClass)
+                getValid: '#myform',
+                corMsgShow: true,
+                errMsgShow: true,
+                corClassShow: true,
+                errClassShow: true,
+                corClassName: 'correctClass',
+                errClassName: 'errorClass',
+                corElem: 'span',
+                errElem: 'span',
+                corElemClass: 'corElemClass',
+                errElemClass: 'errElemClass'
             }
         });
     });
 
-    function validLiteBtn(valid_Id) { //Get the single validate result
+    function validLiteBtn(valid_Id) {
         alert(!!validLite.getValidata('input[name="' + valid_Id + '"]'));
     }
     </script>
@@ -77,13 +77,13 @@
             <p> *Mobile :
                 <!--without correct message and anti-validate-->
                 <input type="text" name="mobile" onBlur="validLite.getValidata(this);" placeholder="0912345678" data-validata='{
+                    "mode": "false",
                     "pattern": "mobile",
                     "error": {
                         "errId":    "err_mobile",
                         "errMsg":   "This is Mobile Error message",
                         "errClass": "errorClass"
-                    },
-                    "mode": "false"
+                    }
                 }' />
                 <span id="err_mobile" class="CSS3 flash errElemClass" style="display:none;">This is Mobile Error</span>
             </p>
@@ -105,8 +105,8 @@
             <p> *Date :
                 <!--alert message and anti-validate-->
                 <select name="date" onBlur="validLite.getValidata(this);" data-validata='{
-                    "pattern": "require",
                     "mode": "false",
+                    "pattern": "require",
                     "error": {
                         "errId":    "alert",
                         "errMsg":   "This is Date Error message"
@@ -170,24 +170,24 @@
         <div class="textbox"><pre><xmp>
             <input type="text" name="demoField"
                data-validata='{
-                  "pattern": "require",         // Required
-                  "error": {                    // Optional
-                     "errId": "err_firstname",  // (optional) message id
-                     "errMsg": "Error Message", // (optional) message
-                     "errClass": "errorClass"   // (optional) your class name
+                  "mode": "false",
+                  "pattern": "require",
+                  "error": {
+                     "errId": "err_firstname", // message id
+                     "errMsg": "Error Message", // message
+                     "errClass": "errorClass" // your class name
                   },
-                  "correct": {                  // Optional
-                     "corId": "cor_firstname",  // (optional) message id
-                     "corMsg": "Correct Message",   // (optional) message
-                     "corClass": "correctClass" // (optional) your class name
-                  },
-                  "mode": "false"               // Optional
+                  "correct": {
+                     "corId": "cor_firstname", // message id
+                     "corMsg": "Correct Message", // message
+                     "corClass": "correctClass" // your class name
+                  }
                }'
             />
             </xmp></pre>
         </div>
         <br>
-        <p>1. Show message Pseudocode (setting: plugin option, data: data-attribute)</p>
+        <p>1. Show message Pseudocode (setting: plugin options, data: data-attributes)</p>
         <div class="textbox">
             <pre>
             if( <b>setting.errMsgShow is ON</b> ) {
@@ -196,7 +196,7 @@
             </pre>
         </div>
         <br>
-        <p>2. Show class Pseudocode (setting: plugin option, data: data-attribute)</p>
+        <p>2. Show class Pseudocode (setting: plugin options, data: data-attributes)</p>
         <div class="textbox">
             <pre>
             if( <b>setting.errClassShow is ON</b> ) {
@@ -211,7 +211,7 @@
             </pre>
         </div>
         <br>
-        <p>3. Show element Pseudocode (setting: plugin option, data: data-attribute)</p>
+        <p>3. Show element Pseudocode (setting: plugin options, data: data-attributes)</p>
         <div class="textbox">
             <pre>
             if( <b>data.errId exists</b> ) {
@@ -227,7 +227,7 @@
         <h4>Notes</h4>
         <div>
             <p><b>1. Get a POP-up to show message when (data.errId == 'alert').</b></p>
-            <p><b>2. "setting.mode" (Boolean) is a anti-validate setting. Reverse the validation results.</b></p>
+            <p><b>2. "setting.mode" is a anti-validate setting. Reverse the validation results.</b></p>
         </div>
     </section>
     <hr>

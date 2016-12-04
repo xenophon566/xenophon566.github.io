@@ -7,40 +7,40 @@
  * @License     under the MIT License
  **/
 var myPatterns = {
-    require: /.+/, //required
-    email: /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, //email
-    mobile: /^09[0-9*]{8}$/, //cellphone
-    visa: /^[0-9*]{4}$/, //visa card number
-    idcard: /^[A-Z]{1}[12]{1}\d{8}$/, //Taiwan ID card number
-    permit: /^[A-Z]{1}[ABCD]{1}\d{8}$/, //Taiwan residence permit
-    address: /[0-9*]/, //Taiwan address
-    telphone: /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/, //Taiwan telephone
-    vatnumber: /^\d{8}$/, //Taiwan company tax ID
-    english: /^[A-Za-z]+$/, //english
-    chinese: /^[\u0391-\uFFE5]+$/, //chinese
-    integer: /^[-\+]?\d+$/, //integer
-    decimal: /^[-\+]?\d+(\.\d+)?$/, //decimal
-    unsafe: /^(([A-Z]*|[a-z]*|\d*|[-_\~!@#\$%\^&\*\.\(\)\[\]\{\}<>\?\\\/\'\"]*)|.{0,5})$|\s/ //unsafe
+    require: /.+/, // required
+    email: /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, // email
+    mobile: /^09[0-9*]{8}$/, // cellphone
+    visa: /^[0-9*]{4}$/, // visa card number
+    idcard: /^[A-Z]{1}[12]{1}\d{8}$/, // Taiwan ID card number
+    permit: /^[A-Z]{1}[ABCD]{1}\d{8}$/, // Taiwan residence permit
+    address: /[0-9*]/, // Taiwan address
+    telphone: /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/, // Taiwan telephone
+    vatnumber: /^\d{8}$/, // Taiwan company tax ID
+    english: /^[A-Za-z]+$/, // english
+    chinese: /^[\u0391-\uFFE5]+$/, // chinese
+    integer: /^[-\+]?\d+$/, // integer
+    decimal: /^[-\+]?\d+(\.\d+)?$/, // decimal
+    unsafe: /^(([A-Z]*|[a-z]*|\d*|[-_\~!@#\$%\^&\*\.\(\)\[\]\{\}<>\?\\\/\'\"]*)|.{0,5})$|\s/ // unsafe
 };
 
 var mySettings = {
-    getValid: 'body', //get validate DOM
-    corMsgShow: false, //show an correct message
-    errMsgShow: true, //show an error message
-    corClassShow: false, //show an correct class
-    errClassShow: true, //show an error class
-    corClassName: 'correctClass', //correct class name
-    errClassName: 'errorClass', //error class name
-    corElem: 'span', //create an element of correct message
-    errElem: 'span', //create an element of error message
-    corElemClass: 'corElemClass', //class of correct element
-    errElemClass: 'errElemClass' //class of error element
+    getValid: 'body', // get validate DOM
+    corMsgShow: false, // show an correct message
+    errMsgShow: true, // show an error message
+    corClassShow: false, // show an correct class
+    errClassShow: true, // show an error class
+    corClassName: 'correctClass', // correct class name
+    errClassName: 'errorClass', // error class name
+    corElem: 'span', // create an element of correct message
+    errElem: 'span', // create an element of error message
+    corElemClass: 'corElemClass', // class of correct element
+    errElemClass: 'errElemClass' // class of error element
 };
 
 jQuery.fn.validLite = function(settings) {
     settings = jQuery.extend(true, {
-        pattern: myPatterns, //default validate patterns
-        setting: mySettings //default validate settings
+        pattern: myPatterns, // default patterns
+        setting: mySettings // default settings
     }, settings);
 
     this.getValidata = function(e) {
@@ -49,17 +49,17 @@ jQuery.fn.validLite = function(settings) {
         elem.each(function() {
             var opt = $(this).data("validata"),
                 pattern = eval('settings.pattern.' + opt.pattern) || /.+/,
-                errId = opt.error ? opt.error.errId || '' : undefined,
-                errMsg = opt.error ? opt.error.errMsg || '' : undefined,
-                errClass = opt.error ? opt.error.errClass || '' : undefined,
-                corId = opt.correct ? opt.correct.corId || '' : undefined,
-                corMsg = opt.correct ? opt.correct.corMsg || '' : undefined,
-                corClass = opt.correct ? opt.correct.corClass || '' : undefined,
+                errId = opt.error ? opt.error.errId || '' : null,
+                errMsg = opt.error ? opt.error.errMsg || '' : null,
+                errClass = opt.error ? opt.error.errClass || '' : null,
+                corId = opt.correct ? opt.correct.corId || '' : null,
+                corMsg = opt.correct ? opt.correct.corMsg || '' : null,
+                corClass = opt.correct ? opt.correct.corClass || '' : null,
                 mode = opt.mode || 1,
                 testTrue = 1,
                 testFalse = 0;
 
-            if (mode == 'false') {
+            if (mode === 'false') {
                 testTrue = 0;
                 testFalse = 1;
             }
@@ -138,10 +138,10 @@ jQuery.fn.validLite = function(settings) {
 
         elem.each(function() {
             var opt = $(this).data("validata"),
-                errId = opt.error ? opt.error.errId || '' : undefined,
-                errClass = opt.error ? opt.error.errClass || '' : undefined,
-                corId = opt.correct ? opt.correct.corId || '' : undefined,
-                corClass = opt.correct ? opt.correct.corClass || '' : undefined;
+                errId = opt.error ? opt.error.errId || '' : null,
+                errClass = opt.error ? opt.error.errClass || '' : null,
+                corId = opt.correct ? opt.correct.corId || '' : null,
+                corClass = opt.correct ? opt.correct.corClass || '' : null;
 
             if ($("#" + corId).size()) $("#" + corId).hide();
             if ($("#" + errId).size()) $("#" + errId).hide();
