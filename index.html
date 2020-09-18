@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFrame</title>
+</head>
+
+<body>
+    <div style="border: 1px solid #000; padding: 2rem;">
+        <div>你剛才傳入的是 : <span id="result"></span> </div>
+        <button id="iframeSubmit" onClick="postMsg()">打到主頁</button>
+    </div>
+</body>
+<script>
+    window.onmessage = function(e) {
+        if (!!e.data) {
+            console.log('%c你剛才傳入的是 : ' + e.data, 'font-size: 36px');
+            document.querySelector("#result").innerHTML = e.data;
+        }
+    }
+
+    function postMsg() {
+        parent.window.postMessage(document.querySelector("#result").innerHTML + '完成交互了', '*');
+    }
+</script>
+
+</html>
